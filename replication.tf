@@ -268,13 +268,6 @@ data "aws_iam_policy_document" "replication-policy" {
 
 
 
-    condition {
-      test     = "StringLikeIfExists"
-      variable = "s3:x-amz-server-side-encryption"
-      values = [
-        var.sse_algorithm
-      ]
-    }
   }
 }
 
