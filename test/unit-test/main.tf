@@ -1,4 +1,5 @@
 resource "aws_kms_key" "s3" {
+  #checkov:skip=CKV2_AWS_64: "Ensure KMS key Policy is defined - This is not needed in our tests"
   description             = "KMS key for S3 unit tests"
   deletion_window_in_days = 7
   enable_key_rotation     = true
