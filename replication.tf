@@ -294,6 +294,11 @@ resource "aws_s3_bucket_replication_configuration" "default" {
     destination {
       bucket        = aws_s3_bucket.replication[0].arn
       storage_class = "STANDARD"
+
+      metrics {
+        status = "Enabled"
+      }
+
       dynamic "encryption_configuration" {
         for_each = var.sse_algorithm == "aws:kms" ? [1] : []
 
