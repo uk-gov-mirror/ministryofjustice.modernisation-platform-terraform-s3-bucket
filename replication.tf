@@ -295,8 +295,12 @@ resource "aws_s3_bucket_replication_configuration" "default" {
       bucket        = aws_s3_bucket.replication[0].arn
       storage_class = "STANDARD"
 
-      metrics {
-        status = "Enabled"
+      dynamic "metrics" {
+        for_each = var.replication_metrics_enabled ? [1] : []
+
+        content {
+          status = "Enabled"
+        }
       }
 
       dynamic "encryption_configuration" {
