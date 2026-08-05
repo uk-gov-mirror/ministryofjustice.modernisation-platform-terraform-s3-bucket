@@ -185,6 +185,7 @@ No modules.
 | <a name="input_ownership_controls"></a> [ownership\_controls](#input\_ownership\_controls) | Bucket Ownership Controls - for use WITH acl var above options are 'BucketOwnerPreferred' or 'ObjectWriter'. To disable ACLs and use new AWS recommended controls set this to 'BucketOwnerEnforced' and which will disabled ACLs and ignore var.acl | `string` | `"ObjectWriter"` | no |
 | <a name="input_replication_bucket"></a> [replication\_bucket](#input\_replication\_bucket) | Name of bucket used for replication - if not specified then * will be used in the policy | `string` | `""` | no |
 | <a name="input_replication_enabled"></a> [replication\_enabled](#input\_replication\_enabled) | Activate S3 bucket replication | `bool` | `false` | no |
+| <a name="input_replication_metrics_enabled"></a> [replication\_metrics\_enabled](#input\_replication\_metrics\_enabled) | Enable CloudWatch metrics and events for S3 replication | `bool` | `false` | no |
 | <a name="input_replication_object_lock_days"></a> [replication\_object\_lock\_days](#input\_replication\_object\_lock\_days) | The number of days that you want to specify for the replication bucket default retention period | `number` | `null` | no |
 | <a name="input_replication_region"></a> [replication\_region](#input\_replication\_region) | Region to create S3 replication bucket | `string` | `"eu-west-2"` | no |
 | <a name="input_replication_role_arn"></a> [replication\_role\_arn](#input\_replication\_role\_arn) | Role ARN to access S3 and replicate objects | `string` | `""` | no |

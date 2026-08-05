@@ -22,6 +22,12 @@ variable "replication_enabled" {
   default     = false
 }
 
+variable "replication_metrics_enabled" {
+  type        = bool
+  description = "Enable CloudWatch metrics and events for S3 replication"
+  default     = false
+}
+
 variable "replication_region" {
   type        = string
   description = "Region to create S3 replication bucket"
