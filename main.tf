@@ -52,7 +52,7 @@ resource "aws_s3_bucket" "default" {
     }
   }
 
-  bucket           = var.bucket_namespace == "account-regional" && var.bucket_prefix != null ? "${var.bucket_prefix}-${data.aws_caller_identity.current.account_id}-${data.aws_region.current.region}-an" : var.bucket_name
+  bucket           = var.bucket_namespace == "account-regional" && var.bucket_prefix != null ? "${trimsuffix(var.bucket_prefix, "-")}-${data.aws_caller_identity.current.account_id}-${data.aws_region.current.region}-an" : var.bucket_name
   bucket_prefix    = var.bucket_namespace == "account-regional" && var.bucket_prefix != null ? null : var.bucket_prefix
   bucket_namespace = var.bucket_namespace
 
